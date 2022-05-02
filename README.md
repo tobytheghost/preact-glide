@@ -94,7 +94,7 @@ const Title = () => <div>This is the title</div>
 
 const App = () => {
   return (
-    <Carousel title={Title}>
+    <Carousel title={<Title />}>
       {slides.map(slide => (
         <div>Slide</div>
       ))}
