@@ -20,29 +20,29 @@ const App = () => {
 
 ## Props
 
-`glideClass`: String
-`glideOptions`: Object
-`glideComponents`: Object
-`glideEvents`: Array
-`arrows`: Boolean | Component (Set `true` to use default)
-`bullets`: Boolean | Component (Set `true` to use default)
-`controls`: Boolean | Component (Set `true` to use default)
-`styles`: Boolean (Set `true` to include styles)
-`title`: Component
+- `glideClass`: String
+- `glideOptions`: Object
+- `glideComponents`: Object
+- `glideEvents`: Array
+- `arrows`: Boolean | Component (Set `true` to use default)
+- `bullets`: Boolean | Component (Set `true` to use default)
+- `controls`: Boolean | Component (Set `true` to use default)
+- `styles`: Boolean (Set `true` to include styles)
+- `title`: Component
 
-#### `glideClass` String
+#### glideClass (String)
 
 Used to override the default Glide className `glide`.
 
-#### `glideOptions` Object
+#### glideOptions (Object)
 
 Glide JS options object: [https://glidejs.com/docs/options/]
 
-#### `glideComponents` Object
+#### glideComponents (Object)
 
 Glide JS Components object: [https://glidejs.com/docs/extending-components/]
 
-#### `glideEvents` Array
+#### glideEvents (Array)
 
 List of Glide events with callbacks. Events are passed in the following format:
 
@@ -65,23 +65,23 @@ const glideEvents = [
 
 ```
 
-#### `arrows` Boolean | Component
+#### arrows (Boolean | Component)
 
 Set `true` to use default component.
 
-#### `bullets` Boolean | Component
+#### bullets (Boolean | Component)
 
 Set `true` to use default component.
 
-#### `controls` Boolean | Component
+#### controls (Boolean | Component)
 
 Set `true` to use default component.
 
-#### `styles` Boolean
+#### styles (Boolean)
 
 Set `true` to use default component.
 
-#### `title` Component
+#### title (Component)
 
 Used to pass in a component that sits above the carousel.
 
