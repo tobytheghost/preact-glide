@@ -20,14 +20,14 @@ const App = () => {
 
 ## Props
 
-`glideClass`: String,
-`glideOptions`: Object,
-`glideComponents`: Object,
-`glideEvents`: Array,
-`arrows`: Boolean | Component (Set `true` to use default),
-`bullets`: Boolean | Component (Set `true` to use default),
-`controls`: Boolean | Component (Set `true` to use default),
-`styles`: Boolean (Set `true` to include styles),
+`glideClass`: String
+`glideOptions`: Object
+`glideComponents`: Object
+`glideEvents`: Array
+`arrows`: Boolean | Component (Set `true` to use default)
+`bullets`: Boolean | Component (Set `true` to use default)
+`controls`: Boolean | Component (Set `true` to use default)
+`styles`: Boolean (Set `true` to include styles)
 `title`: Component
 
 #### `glideClass` String
