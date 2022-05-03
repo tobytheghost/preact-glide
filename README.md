@@ -18,6 +18,21 @@ const App = () => {
 }
 ```
 
+## Styles (Less)
+
+```less
+@import './node_modules/preact-glide/src/styles.less';
+```
+
+### Overriding default className
+
+In the case that you are using a non-standard className (when overriding `glideClass` prop) you can override the default `@glide` less variable as follows:
+
+```less
+@import './node_modules/preact-glide/src/styles.less';
+@glide: ~'.new-class';
+```
+
 ## Props
 
 - `glideClass`: String
@@ -27,20 +42,40 @@ const App = () => {
 - `arrows`: Boolean | Component
 - `bullets`: Boolean | Component
 - `controls`: Boolean | Component
-- `styles`: Boolean
 - `title`: Component
 
+---
 ### glideClass - (String)
 
 Used to override the default Glide className `glide`.
 
+#### Example
+
+```js
+const App = () => {
+  return (
+    <Carousel glideClass={'new-class'}>
+      {slides.map(slide => (
+        <div>Slide</div>
+      ))}
+    </Carousel>
+  )
+}
+```
+
+---
+
 ### glideOptions - (Object)
 
-Glide JS options object: [https://glidejs.com/docs/options/]
+Glide JS options object: https://glidejs.com/docs/options/
+
+---
 
 ### glideComponents - (Object)
 
-Glide JS Components object: [https://glidejs.com/docs/extending-components/]
+Glide JS Components object: https://glidejs.com/docs/extending-components/
+
+---
 
 ### glideEvents - (Array)
 
@@ -65,21 +100,115 @@ const glideEvents = [
 
 ```
 
+---
+
 ### arrows - (Boolean | Component)
 
-Set `true` to use default component.
+Set `true` to use default component. 
+
+#### Example (Default)
+
+```js
+const App = () => {
+  return (
+    <Carousel arrows>
+      {slides.map(slide => (
+        <div>Slide</div>
+      ))}
+    </Carousel>
+  )
+}
+```
+
+#### Example (Custom Component)
+
+```js
+const CustomArrows = () => <div>Arrows</div>
+
+const App = () => {
+  return (
+    <Carousel arrows={<CustomArrows />}>
+      {slides.map(slide => (
+        <div>Slide</div>
+      ))}
+    </Carousel>
+  )
+}
+```
+
+---
 
 ### bullets - (Boolean | Component)
 
 Set `true` to use default component.
 
+#### Example (Default)
+
+```js
+const App = () => {
+  return (
+    <Carousel bullets>
+      {slides.map(slide => (
+        <div>Slide</div>
+      ))}
+    </Carousel>
+  )
+}
+```
+
+#### Example (Custom Component)
+
+```js
+const CustomBullets = () => <div>Bullets</div>
+
+const App = () => {
+  return (
+    <Carousel bullets={<CustomBullets />}>
+      {slides.map(slide => (
+        <div>Slide</div>
+      ))}
+    </Carousel>
+  )
+}
+```
+
+---
+
 ### controls - (Boolean | Component)
 
 Set `true` to use default component.
 
-### styles - (Boolean)
+#### Example (Default)
 
-Set `true` to use default component.
+```js
+const App = () => {
+  return (
+    <Carousel controls>
+      {slides.map(slide => (
+        <div>Slide</div>
+      ))}
+    </Carousel>
+  )
+}
+```
+
+#### Example (Custom Component)
+
+```js
+const CustomControls = () => <div>Controls</div>
+
+const App = () => {
+  return (
+    <Carousel controls={<CustomControls />}>
+      {slides.map(slide => (
+        <div>Slide</div>
+      ))}
+    </Carousel>
+  )
+}
+```
+
+---
 
 ### title - (Component)
 
@@ -90,7 +219,7 @@ Example:
 ```js
 const Carousel = require('preact-glide')
 
-const Title = () => <div>This is the title</div>
+const Title = () => <div>Title</div>
 
 const App = () => {
   return (

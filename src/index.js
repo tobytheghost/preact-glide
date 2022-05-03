@@ -18,7 +18,6 @@ const Carousel = ({
   bullets = false,
   controls = false,
   title = false,
-  styles = false,
   children
 }) => {
   const carousel = useRef()
@@ -51,7 +50,6 @@ const Carousel = ({
       <Arrows glideClass={glideClass} arrows={arrows} />
       <Bullets glideClass={glideClass} bullets={bullets} slides={children} />
       <Controls glideClass={glideClass} controls={controls} />
-      <Styles glideClass={glideClass} styles={styles}/>
     </div>
   )
 }
