@@ -11,5 +11,17 @@
   "dependencies": {
     "@glidejs/glide": "^3.5.2",
     "preact": "^10.7.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      ".*(.js|.css|.less)$": "@qubit/jest"
+    }
+  },
+  "devDependencies": {
+    "@qubit/jest": "^1.4.1",
+    "@testing-library/preact": "^2.0.1",
+    "@testing-library/preact-hooks": "^1.1.0",
+    "jest": "^28.0.3"
   }
 }
