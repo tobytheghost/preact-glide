@@ -35,7 +35,7 @@ In the case that you are using a non-standard className (when overriding `glideC
 
 ## Props
 
-- [`glideClass`: String](#glidelass)
+- [`glideClass`: String](#glideclass)
 - [`glideOptions`: Object](#glideoptions)
 - [`glideComponents`: Object](#glidecomponents)
 - [`glideEvents`: Array](#glideevents)
