@@ -35,17 +35,19 @@ In the case that you are using a non-standard className (when overriding `glideC
 
 ## Props
 
-- `glideClass`: String
-- `glideOptions`: Object
-- `glideComponents`: Object
-- `glideEvents`: Array
-- `arrows`: Boolean | Component
-- `bullets`: Boolean | Component
-- `controls`: Boolean | Component
-- `title`: Component
+- [`glideClass`: String](#glidelass)
+- [`glideOptions`: Object](#glideoptions)
+- [`glideComponents`: Object](#glidecomponents)
+- [`glideEvents`: Array](#glideevents)
+- [`arrows`: Boolean | Component](#arrows)
+- [`bullets`: Boolean | Component](#bullets)
+- [`controls`: Boolean | Component](#controls)
+- [`title`: Component](#title)
 
 ---
-### glideClass - (String)
+### glideClass 
+
+(String)
 
 Used to override the default Glide className `glide`.
 
@@ -65,19 +67,25 @@ const App = () => {
 
 ---
 
-### glideOptions - (Object)
+### glideOptions 
+
+(Object)
 
 Glide JS options object: https://glidejs.com/docs/options/
 
 ---
 
-### glideComponents - (Object)
+### glideComponents 
+
+(Object)
 
 Glide JS Components object: https://glidejs.com/docs/extending-components/
 
 ---
 
-### glideEvents - (Array)
+### glideEvents 
+
+(Array)
 
 List of Glide events with callbacks. Events are passed in the following format:
 
@@ -102,11 +110,15 @@ const glideEvents = [
 
 ---
 
-### arrows - (Boolean | Component)
+### arrows 
+
+(Boolean | Component)
 
 Set `true` to use default component. 
 
-#### Example (Default)
+#### Example 
+
+(Default)
 
 ```js
 const App = () => {
@@ -138,7 +150,9 @@ const App = () => {
 
 ---
 
-### bullets - (Boolean | Component)
+### bullets 
+
+(Boolean | Component)
 
 Set `true` to use default component.
 
@@ -174,7 +188,9 @@ const App = () => {
 
 ---
 
-### controls - (Boolean | Component)
+### controls 
+
+(Boolean | Component)
 
 Set `true` to use default component.
 
@@ -210,7 +226,9 @@ const App = () => {
 
 ---
 
-### title - (Component)
+### title 
+
+(Component)
 
 Used to pass in a component that sits above the carousel.
 
