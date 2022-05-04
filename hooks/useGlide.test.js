@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const React = require('preact')
 const { renderHook } = require('@testing-library/preact-hooks')
 const useGlide = require('./useGlide')

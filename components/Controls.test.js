@@ -1,4 +1,7 @@
-const { expect } = require('expect')
+/**
+ * @jest-environment jsdom
+ */
+
 const React = require('preact')
 const Controls = require('./Controls')
 
