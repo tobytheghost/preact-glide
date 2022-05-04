@@ -2,43 +2,13 @@
 
 A simple wrapper for creating Glide JS carousels with Preact components
 
-## Basic Example
+## Contents
 
-```js
-const Carousel = require('preact-glide')
-
-const App = () => {
-  return (
-    <Carousel>
-      {slides.map(slide => (
-        <div>Slide</div>
-      ))}
-    </Carousel>
-  )
-}
-```
-
-## Styles (Less)
-
-```less
-@import './node_modules/preact-glide/carousel.less';
-```
-
-### Overriding default className
-
-In the case that you are using a non-standard className (when overriding `glideClass` prop) you can override the default `@glideClass` less variable as follows:
-
-```less
-@import './node_modules/preact-glide/carousel.less';
-@glideClass: ~'.new-class';
-```
-
-## Props
-
-- [Preact Glide](#preact-glide)
+  - [Installation](#installation)
   - [Basic Example](#basic-example)
-  - [Styles (Less)](#styles-less)
-    - [Overriding default className](#overriding-default-classname)
+  - [Included Styles](#included-styles)
+    - [Less](#less)
+      - [Overriding default className](#overriding-default-classname)
   - [Props](#props)
     - [glideClass](#glideclass)
     - [glideOptions](#glideoptions)
@@ -57,6 +27,47 @@ In the case that you are using a non-standard className (when overriding `glideC
     - [Track](#track)
   - [Hooks](#hooks)
     - [useGlide](#useglide)
+
+## Installation
+
+```
+npm install preact-glide
+```
+
+## Basic Example
+
+```js
+const Carousel = require('preact-glide')
+
+const App = () => {
+  return (
+    <Carousel>
+      {slides.map(slide => (
+        <div>Slide</div>
+      ))}
+    </Carousel>
+  )
+}
+```
+
+## Included Styles
+
+### Less
+
+```less
+@import './node_modules/preact-glide/carousel.less';
+```
+
+#### Overriding default className
+
+In the case that you are using a non-standard className (when overriding `glideClass` prop) you can override the default `@glideClass` less variable as follows:
+
+```less
+@import './node_modules/preact-glide/carousel.less';
+@glideClass: ~'.new-class';
+```
+
+## Props
 
 
 
