@@ -5,6 +5,7 @@ const Bullets = require('./Bullets')
 const Controls = require('./Controls')
 const Title = require('./Title')
 const Track = require('./Track')
+const Styles = require('./Styles')
 const useGlide = require('../hooks/useGlide')
 
 module.exports = function Container ({
@@ -16,6 +17,7 @@ module.exports = function Container ({
   bullets = false,
   controls = false,
   title = false,
+  styles = false,
   children
 }) {
   const carouselRef = useRef()
@@ -40,6 +42,7 @@ module.exports = function Container ({
         ''
       )}
       {controls ? <Controls glideClass={glideClass} controls={controls} /> : ''}
+      {styles ? <Styles glideClass={glideClass} /> : ''}
     </div>
   )
 }
