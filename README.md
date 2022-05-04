@@ -26,7 +26,7 @@ const App = () => {
 
 ### Overriding default className
 
-In the case that you are using a non-standard className (when overriding `glideClass` prop) you can override the default `@glide` less variable as follows:
+In the case that you are using a non-standard className (when overriding `glideClass` prop) you can override the default `@glideClass` less variable as follows:
 
 ```less
 @import './node_modules/preact-glide/carousel.less';
@@ -35,14 +35,28 @@ In the case that you are using a non-standard className (when overriding `glideC
 
 ## Props
 
-- [`glideClass`: String](#glideclass)
-- [`glideOptions`: Object](#glideoptions)
-- [`glideComponents`: Object](#glidecomponents)
-- [`glideEvents`: Array](#glideevents)
-- [`arrows`: Boolean | Component](#arrows)
-- [`bullets`: Boolean | Component](#bullets)
-- [`controls`: Boolean | Component](#controls)
-- [`title`: Component](#title)
+- [Preact Glide](#preact-glide)
+  - [Basic Example](#basic-example)
+  - [Styles (Less)](#styles-less)
+    - [Overriding default className](#overriding-default-classname)
+  - [Props](#props)
+    - [glideClass](#glideclass)
+    - [glideOptions](#glideoptions)
+    - [glideComponents](#glidecomponents)
+    - [glideEvents](#glideevents)
+    - [arrows](#arrows)
+    - [bullets](#bullets)
+    - [controls](#controls)
+    - [title](#title)
+  - [Components](#components)
+    - [Arrows](#arrows-1)
+    - [Bullets](#bullets-1)
+    - [Container](#container)
+    - [Controls](#controls-1)
+    - [Title](#title-1)
+    - [Track](#track)
+  - [Hooks](#hooks)
+    - [useGlide](#useglide)
 
 
 
@@ -52,7 +66,7 @@ In the case that you are using a non-standard className (when overriding `glideC
 
 Used to override the default Glide className `glide`.
 
-#### Example
+Example:
 
 ```js
 const App = () => {
@@ -115,9 +129,7 @@ const glideEvents = [
 
 Set `true` to use default component.
 
-#### Example
-
-(Default)
+Example (Default):
 
 ```js
 const App = () => {
@@ -131,7 +143,7 @@ const App = () => {
 }
 ```
 
-#### Example (Custom Component)
+Example (Custom Component):
 
 ```js
 const CustomArrows = () => <div>Arrows</div>
@@ -155,7 +167,7 @@ const App = () => {
 
 Set `true` to use default component.
 
-#### Example (Default)
+Example (Default):
 
 ```js
 const App = () => {
@@ -169,7 +181,7 @@ const App = () => {
 }
 ```
 
-#### Example (Custom Component)
+Example (Custom Component):
 
 ```js
 const CustomBullets = () => <div>Bullets</div>
@@ -193,7 +205,7 @@ const App = () => {
 
 Set `true` to use default component.
 
-#### Example (Default)
+Example (Default):
 
 ```js
 const App = () => {
@@ -207,7 +219,7 @@ const App = () => {
 }
 ```
 
-#### Example (Custom Component)
+Example (Custom Component):
 
 ```js
 const CustomControls = () => <div>Controls</div>
