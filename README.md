@@ -21,7 +21,7 @@ const App = () => {
 ## Styles (Less)
 
 ```less
-@import './node_modules/preact-glide/src/styles.less';
+@import './node_modules/preact-glide/carousel.less';
 ```
 
 ### Overriding default className
@@ -29,8 +29,8 @@ const App = () => {
 In the case that you are using a non-standard className (when overriding `glideClass` prop) you can override the default `@glide` less variable as follows:
 
 ```less
-@import './node_modules/preact-glide/src/styles.less';
-@glide: ~'.new-class';
+@import './node_modules/preact-glide/carousel.less';
+@glideClass: ~'.new-class';
 ```
 
 ## Props
