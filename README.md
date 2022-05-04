@@ -7,7 +7,10 @@ A simple wrapper for creating Glide JS carousels with Preact components
   - [Installation](#installation)
   - [Basic Example](#basic-example)
   - [Included Styles](#included-styles)
-    - [Less](#less)
+    - [Component](#as-component)
+    - [Less](#less-import)
+      - [Overriding default className](#overriding-default-classname)
+    - [Scss](#scss-import)
       - [Overriding default className](#overriding-default-classname)
   - [Props](#props)
     - [glideClass](#glideclass)
@@ -17,6 +20,7 @@ A simple wrapper for creating Glide JS carousels with Preact components
     - [arrows](#arrows)
     - [bullets](#bullets)
     - [controls](#controls)
+    - [styles](#styles)
     - [title](#title)
   - [Components](#components)
     - [Arrows](#arrows-1)
@@ -52,7 +56,17 @@ const App = () => {
 
 ## Included Styles
 
-### Less
+### As Component
+
+```js
+const App = () => {
+  return (
+    <Carousel styles>{slides}</Carousel>
+  )
+}
+```
+
+### Less Import
 
 ```less
 @import './node_modules/preact-glide/styles/carousel.less';
@@ -67,7 +81,7 @@ In the case that you are using a non-standard className (when overriding `glideC
 @glideClass: ~'.new-class';
 ```
 
-### Scss
+### Scss Import
 
 ```scss
 @import './node_modules/preact-glide/styles/carousel.scss';
@@ -262,6 +276,27 @@ const App = () => {
 ```
 
 
+### styles
+
+(Boolean)
+
+Set `true` to include default styles - uses `glideClass` by default.
+
+Example:
+
+```js
+const Carousel = require('preact-glide')
+
+const App = () => {
+  return (
+    <Carousel styles>
+      {slides.map(slide => (
+        <div>Slide</div>
+      ))}
+    </Carousel>
+  )
+}
+```
 
 ### title
 
@@ -361,6 +396,7 @@ const App = () => {
   )
 }
 ```
+
 ### Title
 
 - `glideClass` - Override default glide class
