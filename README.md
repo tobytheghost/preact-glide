@@ -44,7 +44,7 @@ In the case that you are using a non-standard className (when overriding `glideC
 - [`controls`: Boolean | Component](#controls)
 - [`title`: Component](#title)
 
----
+
 
 ### glideClass
 
@@ -66,7 +66,7 @@ const App = () => {
 }
 ```
 
----
+
 
 ### glideOptions
 
@@ -74,7 +74,7 @@ const App = () => {
 
 Glide JS options object: https://glidejs.com/docs/options/
 
----
+
 
 ### glideComponents
 
@@ -82,7 +82,7 @@ Glide JS options object: https://glidejs.com/docs/options/
 
 Glide JS Components object: https://glidejs.com/docs/extending-components/
 
----
+
 
 ### glideEvents
 
@@ -108,8 +108,6 @@ const glideEvents = [
 ]
 
 ```
-
----
 
 ### arrows
 
@@ -149,7 +147,7 @@ const App = () => {
 }
 ```
 
----
+
 
 ### bullets
 
@@ -187,7 +185,7 @@ const App = () => {
 }
 ```
 
----
+
 
 ### controls
 
@@ -225,7 +223,7 @@ const App = () => {
 }
 ```
 
----
+
 
 ### title
 
