@@ -1,6 +1,6 @@
 const React = require('preact')
 
-module.exports = function Styles ({ glideClass }) {
+module.exports = function Styles ({ glideClass = 'glide' }) {
   return (
     <style className={`${glideClass}__styles`}>{glideStyles(glideClass)}</style>
   )
