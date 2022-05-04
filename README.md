@@ -4,13 +4,15 @@ A simple wrapper for creating Glide JS carousels with Preact components
 
 ## Contents
 
+- [Preact Glide](#preact-glide)
+  - [Contents](#contents)
   - [Installation](#installation)
   - [Basic Example](#basic-example)
-  - [Included Styles](#included-styles)
+  - [Styles](#styles)
     - [Component](#component)
     - [Import](#import)
-      - [Less](#less)
-      - [Scss](#scss)
+      - [Less Import](#less-import)
+      - [Scss Import](#scss-import)
   - [Props](#props)
     - [glideClass](#glideclass)
     - [glideOptions](#glideoptions)
@@ -19,7 +21,7 @@ A simple wrapper for creating Glide JS carousels with Preact components
     - [arrows](#arrows)
     - [bullets](#bullets)
     - [controls](#controls)
-    - [styles](#styles)
+    - [styles](#styles-1)
     - [title](#title)
   - [Components](#components)
     - [Arrows](#arrows-1)
@@ -61,9 +63,7 @@ Automatically include styles. Uses `glideClass` if set.
 
 ```js
 const App = () => {
-  return (
-    <Carousel styles>{slides}</Carousel>
-  )
+  return <Carousel styles>{slides}</Carousel>
 }
 ```
 
@@ -96,12 +96,10 @@ In the case that you are using a non-standard className (when overriding `glideC
 
 ```less
 @import './node_modules/preact-glide/styles/carousel.scss';
-$glideClass: ".new-class";
+$glideClass: '.new-class';
 ```
 
 ## Props
-
-
 
 ### glideClass
 
@@ -123,23 +121,17 @@ const App = () => {
 }
 ```
 
-
-
 ### glideOptions
 
 (Object)
 
 Glide JS options object: https://glidejs.com/docs/options/
 
-
-
 ### glideComponents
 
 (Object)
 
 Glide JS Components object: https://glidejs.com/docs/extending-components/
-
-
 
 ### glideEvents
 
@@ -202,8 +194,6 @@ const App = () => {
 }
 ```
 
-
-
 ### bullets
 
 (Boolean | Component)
@@ -240,8 +230,6 @@ const App = () => {
 }
 ```
 
-
-
 ### controls
 
 (Boolean | Component)
@@ -277,7 +265,6 @@ const App = () => {
   )
 }
 ```
-
 
 ### styles
 
@@ -349,9 +336,7 @@ const {
 const { Arrows } = require('preact-glide/components')
 
 const App = () => {
-  return (
-    <Arrows />
-  )
+  return <Arrows />
 }
 ```
 
@@ -365,13 +350,10 @@ const App = () => {
 const { Bullets } = require('preact-glide/components')
 
 const App = () => {
-  return (
-    <Bullets>
-      {arrayOfSlides}
-    </Bullets>
-  )
+  return <Bullets>{arrayOfSlides}</Bullets>
 }
 ```
+
 ### Container
 
 - `glideClass` - Override default glide class
@@ -380,11 +362,10 @@ const App = () => {
 const { Container } = require('preact-glide/components')
 
 const App = () => {
-  return (
-    <Container />
-  )
+  return <Container />
 }
 ```
+
 ### Controls
 
 - `glideClass` - Override default glide class
@@ -394,9 +375,7 @@ const App = () => {
 const { Controls } = require('preact-glide/components')
 
 const App = () => {
-  return (
-    <Controls />
-  )
+  return <Controls />
 }
 ```
 
@@ -409,11 +388,10 @@ const App = () => {
 const { Title } = require('preact-glide/components')
 
 const App = () => {
-  return (
-    <Title />
-  )
+  return <Title />
 }
 ```
+
 ### Track
 
 - `glideClass` - Override default glide class
@@ -430,6 +408,7 @@ const App = () => {
   )
 }
 ```
+
 ## Hooks
 
 The hooks can be exported from `preact-glide/hooks`
