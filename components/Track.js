@@ -6,12 +6,18 @@ module.exports = function Track ({ glideClass, children }) {
       <ul className={`${glideClass}__slides`}>
         {children.length
           ? children.map((slide, index) => {
-              return React.cloneElement(slide, {
-                ...slide.props,
-                key: index,
-                className: `${glideClass}__slide ${slide.props.className &&
-                  slide.props.className}`
-              })
+              if(slide && typeof slide === 'object') {
+                if(Boolean(slide.props)) {
+                  return React.cloneElement(slide, {
+                    ...slide.props,
+                    key: slide.props.key || index,
+                    className: `${glideClass}__slide ${slide.props.className &&
+                      slide.props.className}`
+                  })
+                }
+                return ''
+              }
+              return <li key={index} className={`${glideClass}__slide`}>{slide}</li>
             })
           : ''}
       </ul>

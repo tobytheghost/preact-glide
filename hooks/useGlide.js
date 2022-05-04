@@ -14,11 +14,11 @@ module.exports = function useGlide ({
   const [mountedEvents, setMountedEvents] = useState([])
 
   const addGlideEvents = (slider, glideEvents) => {
-	if (!glideEvents || !glideEvents.length) return
-	return glideEvents.map(({ event, cb }) => {
-		slider.on(event, cb)
-		return event
-	})
+    if (!glideEvents || !glideEvents.length) return
+    return glideEvents.map(({ event, cb }) => {
+      slider.on(event, cb)
+      return event
+    })
   }
 
   useEffect(() => {
@@ -26,7 +26,7 @@ module.exports = function useGlide ({
     const slider = new Glide(carouselRef.current, glideOptions)
     if (!slider) return
     const events = addGlideEvents(slider, glideEvents)
-	setMountedEvents(events)
+    setMountedEvents(events)
     slider.mount(glideComponents)
     setIsMounted(true)
 
