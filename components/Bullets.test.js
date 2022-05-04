@@ -9,21 +9,61 @@ const cleanUp = () => {
 }
 
 describe('Bullets', () => {
-  beforeEach(() => {
-    const element = document.createElement('div')
-    React.render(<Bullets glideClass={'test'} bullets slides={slides}/>, element)
-    document.body.append(element)
+  describe('Default', () => {
+    beforeEach(() => {
+      const element = document.createElement('div')
+      React.render(<Bullets glideClass={'test'}>{slides}</Bullets>, element)
+      document.body.append(element)
+    })
+
+    afterEach(cleanUp)
+
+    it('Renders bullets', () => {
+      expect(
+        document.body.contains(document.querySelector('.test__bullets'))
+      ).toBe(true)
+    })
+
+    it('Renders all bullets', () => {
+      expect(document.querySelectorAll('.test__bullet').length).toBe(
+        slides.length
+      )
+    })
   })
+  describe('Custom', () => {
+    beforeEach(() => {
+      const element = document.createElement('div')
+      const CustomBullets = ({ children }) => (
+        <div className={'test__custom'}>
+          {children.map(child => (
+            <div className={'test__custom-bullet'}>{child}</div>
+          ))}
+        </div>
+      )
+      React.render(
+        <Bullets
+          glideClass={'test'}
+          bullets={<CustomBullets>{slides}</CustomBullets>}
+        >
+          {slides}
+        </Bullets>,
+        element
+      )
+      document.body.append(element)
+    })
 
-  afterEach(cleanUp)
+    afterEach(cleanUp)
 
-  it('Renders bullets', () => {
-    expect(
-      document.body.contains(document.querySelector('.test__bullets'))
-    ).toBe(true)
-  })
+    it('Renders bullets', () => {
+      expect(
+        document.body.contains(document.querySelector('.test__custom'))
+      ).toBe(true)
+    })
 
-  it('Renders all bullets', () => {
-	  expect(document.querySelectorAll('.test__bullet').length).toBe(slides.length)
+    it('Renders all bullets', () => {
+      expect(document.querySelectorAll('.test__custom-bullet').length).toBe(
+        slides.length
+      )
+    })
   })
 })

@@ -29,13 +29,17 @@ module.exports = function Container ({
 
   return (
     <div className={`${glideClass}`} ref={carouselRef}>
-      <Title glideClass={glideClass} title={title} />
-      <Track glideClass={glideClass}>
-        {children}
-      </Track>
-      <Arrows glideClass={glideClass} arrows={arrows} />
-      <Bullets glideClass={glideClass} bullets={bullets} slides={children} />
-      <Controls glideClass={glideClass} controls={controls} />
+      {title ? <Title glideClass={glideClass} title={title} /> : ''}
+      <Track glideClass={glideClass}>{children}</Track>
+      {arrows ? <Arrows glideClass={glideClass} arrows={arrows} /> : ''}
+      {bullets ? (
+        <Bullets glideClass={glideClass} bullets={bullets}>
+          {children}
+        </Bullets>
+      ) : (
+        ''
+      )}
+      {controls ? <Controls glideClass={glideClass} controls={controls} /> : ''}
     </div>
   )
 }

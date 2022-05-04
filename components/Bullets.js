@@ -1,12 +1,11 @@
 const React = require('preact')
 
-module.exports = function Bullets ({ glideClass = 'glide', bullets, slides }) {
-  if (!bullets) return ''
-  if (typeof bullets === 'object' && Boolean(bullets.props)) return bullets
-  if (!slides || !slides.length) return ''
+module.exports = function Bullets ({ glideClass = 'glide', bullets, children }) {
+  if (bullets && typeof bullets === 'object') return Boolean(bullets.props) ? bullets : ''
+  if (!children || !children.length) return ''
   return (
     <div className={`${glideClass}__bullets`} data-glide-el='controls[nav]'>
-      {slides.map((_, index) => {
+      {children.map((_, index) => {
         return (
           <button
             className={`${glideClass}__bullet`}

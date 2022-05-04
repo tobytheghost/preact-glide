@@ -1,8 +1,7 @@
 const React = require('preact')
 
 module.exports = function Arrows ({ glideClass = 'glide', arrows }) {
-  if (!arrows) return ''
-  if (typeof arrows === 'object' && Boolean(arrows.props)) return arrows
+  if (arrows && typeof arrows === 'object') return Boolean(arrows.props) ? arrows : ''
   return (
     <div className={`${glideClass}__arrows`} data-glide-el='controls'>
       <button

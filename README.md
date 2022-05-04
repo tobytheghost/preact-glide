@@ -45,7 +45,8 @@ In the case that you are using a non-standard className (when overriding `glideC
 - [`title`: Component](#title)
 
 ---
-### glideClass 
+
+### glideClass
 
 (String)
 
@@ -67,7 +68,7 @@ const App = () => {
 
 ---
 
-### glideOptions 
+### glideOptions
 
 (Object)
 
@@ -75,7 +76,7 @@ Glide JS options object: https://glidejs.com/docs/options/
 
 ---
 
-### glideComponents 
+### glideComponents
 
 (Object)
 
@@ -83,7 +84,7 @@ Glide JS Components object: https://glidejs.com/docs/extending-components/
 
 ---
 
-### glideEvents 
+### glideEvents
 
 (Array)
 
@@ -110,13 +111,13 @@ const glideEvents = [
 
 ---
 
-### arrows 
+### arrows
 
 (Boolean | Component)
 
-Set `true` to use default component. 
+Set `true` to use default component.
 
-#### Example 
+#### Example
 
 (Default)
 
@@ -150,7 +151,7 @@ const App = () => {
 
 ---
 
-### bullets 
+### bullets
 
 (Boolean | Component)
 
@@ -188,7 +189,7 @@ const App = () => {
 
 ---
 
-### controls 
+### controls
 
 (Boolean | Component)
 
@@ -226,7 +227,7 @@ const App = () => {
 
 ---
 
-### title 
+### title
 
 (Component)
 
@@ -248,5 +249,147 @@ const App = () => {
     </Carousel>
   )
 }
-
 ```
+
+## Components
+
+Single components can be exported from `preact-glide/components`
+
+```js
+const {
+  Arrows,
+  Bullets,
+  Container,
+  Controls,
+  Title,
+  Track
+} = require('preact-glide/components')
+```
+
+### Arrows
+
+- `glideClass` - Override default glide class
+- `arrows` - Override default component
+
+```js
+const { Arrows } = require('preact-glide/components')
+
+const App = () => {
+  return (
+    <Arrows />
+  )
+}
+```
+
+### Bullets
+
+- `glideClass` - Override default glide class
+- `bullets` - Override default component
+- `children` - Array of Slides
+
+```js
+const { Bullets } = require('preact-glide/components')
+
+const App = () => {
+  return (
+    <Bullets>
+      {arrayOfSlides}
+    </Bullets>
+  )
+}
+```
+### Container
+
+- `glideClass` - Override default glide class
+
+```js
+const { Container } = require('preact-glide/components')
+
+const App = () => {
+  return (
+    <Container />
+  )
+}
+```
+### Controls
+
+- `glideClass` - Override default glide class
+- `controls` - Override default component
+
+```js
+const { Controls } = require('preact-glide/components')
+
+const App = () => {
+  return (
+    <Controls />
+  )
+}
+```
+### Title
+
+- `glideClass` - Override default glide class
+- `title` - Component or string to be rendered
+
+```js
+const { Title } = require('preact-glide/components')
+
+const App = () => {
+  return (
+    <Title />
+  )
+}
+```
+### Track
+
+- `glideClass` - Override default glide class
+- `children` - Array of Slides
+
+```js
+const { Track } = require('preact-glide/components')
+
+const App = () => {
+  return (
+    <Track>
+      {arrayOfSlides}
+    <Track/>
+  )
+}
+```
+## Hooks
+
+The hooks can be exported from `preact-glide/hooks`
+
+```js
+const { useGlide } = require('preact-glide/hooks')
+```
+
+### useGlide
+
+Takes an object as a parameter with the following properties
+
+- `carouselRef` - (required) useRef reference to carousel element
+- `glideOptions` - Glide JS options object: https://glidejs.com/docs/options/
+- `glideComponents` - Glide JS Components object: https://glidejs.com/docs/extending-components/
+- `glideEvents` - List of Glide events with callbacks.
+
+```js
+const { useGlide } = require('preact-glide/hooks')
+
+const App = () => {
+  const carouselRef = useRef()
+
+  useGlide({ carouselRef })
+
+  return (
+    <div className={`glide`} ref={carouselRef}>
+      <div className={`glide__track`} data-glide-el='track'>
+        <ul className={`glide__slides`}>
+          <li className={`glide__slide`}>Slide</li>
+        </ul>
+      </div>
+    </div>
+  )
+}
+```
+
+_Note_: HTML structure inside `carouselRef` will need to contain the glide structure and classes
