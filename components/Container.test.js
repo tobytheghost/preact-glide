@@ -1,6 +1,6 @@
 const { expect } = require('expect')
 const React = require('preact')
-const Carousel = require('./Carousel')
+const Container = require('./Container')
 
 const slides = ['Slide1', 'Slide2']
 const cleanUp = () => (document.body.innerHTML = '')
@@ -9,15 +9,15 @@ function Title () {
   return <div className={'test__title-component'}>Title</div>
 }
 
-describe('Carousel (No props)', () => {
+describe('Container (No props)', () => {
   beforeEach(() => {
     const element = document.createElement('div')
     React.render(
-      <Carousel glideClass={'test'}>
+      <Container glideClass={'test'}>
         {slides.map(slide => (
           <div>{slide}</div>
         ))}
-      </Carousel>,
+      </Container>,
       element
     )
     document.body.append(element)
@@ -64,15 +64,15 @@ describe('Carousel (No props)', () => {
   })
 })
 
-describe('Carousel (with default arrows)', () => {
+describe('Container (with default arrows)', () => {
   beforeEach(() => {
     const element = document.createElement('div')
     React.render(
-      <Carousel glideClass={'test'} arrows>
+      <Container glideClass={'test'} arrows>
         {slides.map(slide => (
           <div>{slide}</div>
         ))}
-      </Carousel>,
+      </Container>,
       element
     )
     document.body.append(element)
@@ -91,15 +91,15 @@ describe('Carousel (with default arrows)', () => {
   })
 })
 
-describe('Carousel (with default bullets)', () => {
+describe('Container (with default bullets)', () => {
   beforeEach(() => {
     const element = document.createElement('div')
     React.render(
-      <Carousel glideClass={'test'} bullets>
+      <Container glideClass={'test'} bullets>
         {slides.map(slide => (
           <div>{slide}</div>
         ))}
-      </Carousel>,
+      </Container>,
       element
     )
     document.body.append(element)
@@ -120,15 +120,15 @@ describe('Carousel (with default bullets)', () => {
   })
 })
 
-describe('Carousel (with default controls)', () => {
+describe('Container (with default controls)', () => {
   beforeEach(() => {
     const element = document.createElement('div')
     React.render(
-      <Carousel glideClass={'test'} controls>
+      <Container glideClass={'test'} controls>
         {slides.map(slide => (
           <div>{slide}</div>
         ))}
-      </Carousel>,
+      </Container>,
       element
     )
     document.body.append(element)
@@ -147,15 +147,15 @@ describe('Carousel (with default controls)', () => {
   })
 })
 
-describe('Carousel (with title - string)', () => {
+describe('Container (with title - string)', () => {
   beforeEach(() => {
     const element = document.createElement('div')
     React.render(
-      <Carousel glideClass={'test'} title={'Title'}>
+      <Container glideClass={'test'} title={'Title'}>
         {slides.map(slide => (
           <div>{slide}</div>
         ))}
-      </Carousel>,
+      </Container>,
       element
     )
     document.body.append(element)
@@ -170,15 +170,15 @@ describe('Carousel (with title - string)', () => {
   })
 })
 
-describe('Carousel (with title - component)', () => {
+describe('Container (with title - component)', () => {
   beforeEach(() => {
     const element = document.createElement('div')
     React.render(
-      <Carousel glideClass={'test'} title={<Title />}>
+      <Container glideClass={'test'} title={<Title />}>
         {slides.map(slide => (
           <div>{slide}</div>
         ))}
-      </Carousel>,
+      </Container>,
       element
     )
     document.body.append(element)

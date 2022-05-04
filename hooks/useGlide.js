@@ -11,22 +11,27 @@ module.exports = function useGlide ({
   glideComponents
 }) {
   const [isMounted, setIsMounted] = useState(false)
+  const [mountedEvents, setMountedEvents] = useState([])
+
+  const addGlideEvents = (slider, glideEvents) => {
+	if (!glideEvents || !glideEvents.length) return
+	return glideEvents.map(({ event, cb }) => {
+		slider.on(event, cb)
+		return event
+	})
+  }
 
   useEffect(() => {
     if (!carouselRef.current) return
     const slider = new Glide(carouselRef.current, glideOptions)
     if (!slider) return
-    addGlideEvents(slider, glideEvents)
+    const events = addGlideEvents(slider, glideEvents)
+	setMountedEvents(events)
     slider.mount(glideComponents)
     setIsMounted(true)
 
     return () => slider.destroy()
   }, [])
 
-  return isMounted
-}
-
-function addGlideEvents (slider, glideEvents) {
-  if (!glideEvents || !glideEvents.length) return
-  glideEvents.map(({ event, cb }) => slider.on(event, cb))
+  return { isMounted, mountedEvents }
 }
