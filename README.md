@@ -7,11 +7,10 @@ A simple wrapper for creating Glide JS carousels with Preact components
   - [Installation](#installation)
   - [Basic Example](#basic-example)
   - [Included Styles](#included-styles)
-    - [Component](#as-component)
-    - [Less](#less-import)
-      - [Overriding default className](#overriding-default-classname)
-    - [Scss](#scss-import)
-      - [Overriding default className](#overriding-default-classname)
+    - [Component](#component)
+    - [Import](#import)
+      - [Less](#less)
+      - [Scss](#scss)
   - [Props](#props)
     - [glideClass](#glideclass)
     - [glideOptions](#glideoptions)
@@ -54,9 +53,11 @@ const App = () => {
 }
 ```
 
-## Included Styles
+## Styles
 
-### As Component
+### Component
+
+Automatically include styles. Uses `glideClass` if set.
 
 ```js
 const App = () => {
@@ -66,13 +67,15 @@ const App = () => {
 }
 ```
 
-### Less Import
+### Import
+
+#### Less Import
 
 ```less
 @import './node_modules/preact-glide/styles/carousel.less';
 ```
 
-#### Overriding default className
+Overriding default className
 
 In the case that you are using a non-standard className (when overriding `glideClass` prop) you can override the default `@glideClass` less variable as follows:
 
@@ -81,13 +84,13 @@ In the case that you are using a non-standard className (when overriding `glideC
 @glideClass: ~'.new-class';
 ```
 
-### Scss Import
+#### Scss Import
 
 ```scss
 @import './node_modules/preact-glide/styles/carousel.scss';
 ```
 
-#### Overriding default className
+Overriding default className
 
 In the case that you are using a non-standard className (when overriding `glideClass` prop) you can override the default `$glideClass` less variable as follows:
 
