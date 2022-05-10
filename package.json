@@ -1,12 +1,12 @@
 {
   "name": "preact-glide",
   "version": "1.1.5",
-  "description": "",
+  "description": "A simple wrapper for creating Glide JS carousels with Preact components",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage"
   },
-  "author": "",
+  "author": "Toby Gates",
   "license": "ISC",
   "dependencies": {
     "@glidejs/glide": "^3.5.2",

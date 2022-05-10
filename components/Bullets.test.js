@@ -69,4 +69,65 @@ describe('Bullets', () => {
       )
     })
   })
+
+  describe('Wrong Prop - object', () => {
+    beforeEach(() => {
+      const element = document.createElement('div')
+      React.render(
+        <Bullets glideClass={'test'} bullets={{}}>
+          {slides}
+        </Bullets>,
+        element
+      )
+      document.body.append(element)
+    })
+
+    afterEach(cleanUp)
+
+    it('Does not render bullets', () => {
+      expect(document.body.contains(document.querySelector('.test'))).toBe(
+        false
+      )
+    })
+  })
+
+  describe('Wrong Prop - undefined', () => {
+    beforeEach(() => {
+      const element = document.createElement('div')
+      React.render(
+        <Bullets glideClass={'test'} bullets={undefined}>
+          {slides}
+        </Bullets>,
+        element
+      )
+      document.body.append(element)
+    })
+
+    afterEach(cleanUp)
+
+    it('Does not render bullets', () => {
+      expect(document.body.contains(document.querySelector('.test'))).toBe(
+        false
+      )
+    })
+  })
+
+  describe('No children', () => {
+    beforeEach(() => {
+      const element = document.createElement('div')
+      React.render(
+        <Bullets glideClass={'test'}></Bullets>,
+        element
+      )
+      document.body.append(element)
+    })
+
+    afterEach(cleanUp)
+
+    it('Does not render bullets', () => {
+      expect(document.body.contains(document.querySelector('.test'))).toBe(
+        false
+      )
+    })
+  })
 })

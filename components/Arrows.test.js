@@ -45,4 +45,42 @@ describe('Arrows', () => {
       ).toBe(true)
     })
   })
+
+  describe('Wrong Prop - object', () => {
+    beforeEach(() => {
+      const element = document.createElement('div')
+      React.render(
+        <Arrows glideClass={'test'} arrows={{}} />,
+        element
+      )
+      document.body.append(element)
+    })
+
+    afterEach(cleanUp)
+
+    it('Does not render arrows', () => {
+      expect(
+        document.body.contains(document.querySelector('.test'))
+      ).toBe(false)
+    })
+  })
+
+  describe('Wrong Prop - undefined', () => {
+    beforeEach(() => {
+      const element = document.createElement('div')
+      React.render(
+        <Arrows glideClass={'test'} arrows={undefined} />,
+        element
+      )
+      document.body.append(element)
+    })
+
+    afterEach(cleanUp)
+
+    it('Does not render arrows', () => {
+      expect(
+        document.body.contains(document.querySelector('.test'))
+      ).toBe(false)
+    })
+  })
 })
