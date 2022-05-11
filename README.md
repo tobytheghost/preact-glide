@@ -476,6 +476,7 @@ Takes an object as a parameter with the following properties
 - `glideOptions` - Glide JS options object: https://glidejs.com/docs/options/
 - `glideComponents` - Glide JS Components object: https://glidejs.com/docs/extending-components/
 - `glideEvents` - List of Glide events with callbacks.
+- `slides` - List of slides
 
 ```js
 const { useGlide } = require('preact-glide/hooks')
