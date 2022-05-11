@@ -10,15 +10,15 @@ const useGlide = require('../hooks/useGlide')
 
 module.exports = function Container ({
   glideClass = 'glide',
-  glideOptions,
-  glideComponents,
-  glideEvents,
+  glideOptions = {},
+  glideComponents = [],
+  glideEvents = [],
   arrows = false,
   bullets = false,
   controls = false,
   title = false,
   styles = false,
-  children
+  children = []
 }) {
   const carouselRef = useRef()
 
@@ -26,7 +26,8 @@ module.exports = function Container ({
     carouselRef,
     glideOptions,
     glideComponents,
-    glideEvents
+    glideEvents,
+    slides: children
   })
 
   return (
