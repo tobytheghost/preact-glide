@@ -23,19 +23,23 @@ module.exports = function useGlide ({
   }
 
   const setupOnViewCallback = slider => {
+    let slidesViewed = {}
+    let prevViewIndex = 0
+
     const slidesPerView = slider.settings.perView
     const getSlide = i => {
       return slides[i]
     }
 
     const fireViewEvent = i => {
+      if (slidesViewed[i]) return
+      slidesViewed[i] = true
       const slide = getSlide(i)
       if (!slide || typeof slide !== 'object') return
       const { onView } = slide.props
       if (onView && typeof onView === 'function') onView()
     }
 
-    let prevViewIndex = 0
     const onViewCallback = ({ init = false } = {}) => {
       if (slider.index === prevViewIndex && !init) return
       const rightIndex = slider.index + Math.ceil(slidesPerView) - 1
