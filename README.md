@@ -23,6 +23,9 @@ A simple wrapper for creating Glide JS carousels with Preact components
     - [controls](#controls)
     - [styles](#styles-1)
     - [title](#title)
+  - [Slide Events](#slide-events)
+    - [onView](#onview)
+    - [onClick](#onclick)
   - [Components](#components)
     - [Arrows](#arrows-1)
     - [Bullets](#bullets-1)
@@ -306,6 +309,54 @@ const App = () => {
     <Carousel title={<Title />}>
       {slides.map(slide => (
         <div>Slide</div>
+      ))}
+    </Carousel>
+  )
+}
+```
+
+## Slide Events
+
+### onView
+
+A function that will fire when the slide comes into view.
+
+*Note: The onView prop must be on the top most element.*
+
+Example:
+
+```js
+const Carousel = require('preact-glide')
+
+const App = () => {
+  return (
+    <Carousel>
+      {slides.map(slide => (
+        <div onView={() => alert('Viewed')}>Slide</div>
+      ))}
+    </Carousel>
+  )
+}
+```
+
+### onClick
+
+Bypasses a slight bug with GlideJs where dragging the top most element would also count as a 'click'. 
+
+Overrides the default onClick property on the top most element. Fires the function only when a 'click' occurs, not on 'drag'.
+
+*Note: Only overrides the onClick for the top most element.*
+
+Example:
+
+```js
+const Carousel = require('preact-glide')
+
+const App = () => {
+  return (
+    <Carousel>
+      {slides.map(slide => (
+        <div onClick={() => alert('Clicked')}>Slide</div>
       ))}
     </Carousel>
   )
